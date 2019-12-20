@@ -1,6 +1,9 @@
 spring:
   application:
     name: Example
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,5 +24,11 @@ spring:
     validationInterval: 30000
     validationQuery: SELECT 1
     testWhileIdle: true
+logging:
+  level: # define logging level of each specific package
+    com:
+      shark:
+        example: TRACE
+  path: log
 server:
   port: 9080

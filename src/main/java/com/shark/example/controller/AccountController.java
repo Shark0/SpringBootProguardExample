@@ -5,6 +5,7 @@ import com.shark.example.service.account.RegisterService;
 import com.shark.example.service.account.SearchAccountListService;
 import com.shark.example.service.account.dio.RegisterInput;
 import com.shark.example.service.account.dio.SearchAccountInput;
+import com.shark.example.service.base.BaseResponseEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +34,7 @@ public class AccountController {
 
     @ApiOperation(value = "註冊", notes = "", produces = "application/json")
     @PostMapping("register")
-    public AccountDaoEntity register(
+    public BaseResponseEntity<AccountDaoEntity> register(
             @Valid @ModelAttribute RegisterInput registerInput) {
         return registerService.start(registerInput);
     }
