@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 @Data
-public class RegisterInput implements Serializable {
+public class LoginInput implements Serializable {
     @NotEmpty
     @ApiModelProperty(value = "帳號", required = true)
     @JsonProperty("account")
@@ -17,13 +17,7 @@ public class RegisterInput implements Serializable {
     private String account;
 
     @NotEmpty
-    @ApiModelProperty(value = "姓名", required = true)
-    @JsonProperty("name")
-    @SerializedName("name")
-    private String name;
-
-    @NotEmpty
-    @ApiModelProperty(value = "密碼", required = true)
+    @ApiModelProperty(value = "密碼")
     @JsonProperty("password")
     @SerializedName("password")
     private String password;

@@ -1,10 +1,13 @@
 package com.shark.example.controller;
 
 import com.shark.example.dao.entity.AccountDaoEntity;
+import com.shark.example.service.account.LoginService;
 import com.shark.example.service.account.RegisterService;
 import com.shark.example.service.account.SearchAccountListService;
+import com.shark.example.service.account.dio.LoginInput;
 import com.shark.example.service.account.dio.RegisterInput;
 import com.shark.example.service.account.dio.SearchAccountInput;
+import com.shark.example.service.account.dto.LoginOutput;
 import com.shark.example.service.base.BaseResponseEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -37,5 +40,14 @@ public class AccountController {
     public BaseResponseEntity<AccountDaoEntity> register(
             @Valid @ModelAttribute RegisterInput registerInput) {
         return registerService.start(registerInput);
+    }
+
+    private final LoginService loginService;
+
+    @ApiOperation(value = "登入", notes = "", produces = "application/json")
+    @PostMapping("login")
+    public BaseResponseEntity<LoginOutput> register(
+            @Valid @ModelAttribute LoginInput loginInput) {
+        return loginService.start(loginInput);
     }
 }
