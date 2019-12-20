@@ -1,4 +1,4 @@
-package com.shark.example.service.dio;
+package com.shark.example.service.test.dio;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 @ApiModel(description = "測試Input")
 @Data
-public class Test1Input implements Serializable {
+public class TestInput implements Serializable {
 
     @ApiModelProperty(value = "參數", required = true)
     @NotEmpty

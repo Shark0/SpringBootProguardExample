@@ -1,11 +1,12 @@
 package com.shark.example.controller;
 
-import com.shark.example.service.TestService;
-import com.shark.example.service.dio.Test1Input;
-import com.shark.example.service.dto.Test1Output;
+import com.shark.example.service.test.TestService;
+import com.shark.example.service.test.dio.TestInput;
+import com.shark.example.service.test.dto.TestOutput;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,15 +16,15 @@ import javax.validation.Valid;
 
 @RestController("TestController")
 @RequestMapping(value = "/test")
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Api(tags = "測試")
 public class TestController {
 
     private final TestService testService;
 
     @ApiOperation(value = "測試1")
-    @PostMapping("test1")
-    public Test1Output test1(@Valid @ModelAttribute Test1Input input) {
+    @PostMapping
+    public TestOutput test1(@Valid @ModelAttribute TestInput input) {
         return testService.start(input);
     }
 }

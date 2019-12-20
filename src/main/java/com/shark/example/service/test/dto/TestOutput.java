@@ -1,4 +1,4 @@
-package com.shark.example.service.dto;
+package com.shark.example.service.test.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 @ApiModel(description = "測試Output")
 @Data
-public class Test1Output implements Serializable {
+public class TestOutput implements Serializable {
     @ApiModelProperty(value = "參數", required = true)
     @JsonProperty("parameter")
     @SerializedName("parameter")
