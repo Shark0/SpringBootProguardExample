@@ -14,7 +14,7 @@
 	</parent>
 
 	<properties>
-		<java.version>8</java.version>
+		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<proguard.version>6.2.2</proguard.version>
@@ -108,10 +108,10 @@
 					<obfuscate>true</obfuscate>
 					<proguardInclude>${basedir}/proguard.cfg</proguardInclude>
 					<injarNotExistsSkip>true</injarNotExistsSkip>
-					<libs>
-						<lib>/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/jre/lib/rt.jar</lib>
-						<lib>/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/jre/lib/jce.jar</lib>
-					</libs>
+<!--					<libs>-->
+<!--						<lib>/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/jre/lib/rt.jar</lib>-->
+<!--						<lib>/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/jre/lib/jce.jar</lib>-->
+<!--					</libs>-->
 				</configuration>
 				<dependencies>
 					<dependency>
